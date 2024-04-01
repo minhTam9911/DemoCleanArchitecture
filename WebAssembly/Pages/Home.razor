@@ -1,0 +1,42 @@
+﻿@page "/"
+@using Application.Services
+@using Domain.Entities;
+@using NetcodeHub.Packages.Components.Validations.OnInput;
+@inject IEmployeeService emp;
+@inject ToastService toastService;
+@using NetcodeHub.Packages.Components.Toast;
+<PageTitle>Home</PageTitle>
+<div class="row">
+	<div class="col-lg-6">\
+		<EditForm Model="employee" OnValidSubmit="Save">
+			<DataAnnotationsValidator />
+			<FloatingText @bind-Value="employee.Name" Label="Customer Fullname" class="form-control" Placeholder="Enter fullname"/>
+			<ValidationMessage For="()=>employee.Name"/>
+			<FloatingText @bind-Value="employee.Email" Label="Customer Email" class="form-control" Placeholder="Enter email"/>
+			<ValidationMessage For="()=>employee.Email" />
+			<FloatingText @bind-Value="employee.Password" Label="Customer Password" class="form-control" Placeholder="Enter password"/>
+			<ValidationMessage For="()=>employee.Password"/>
+			<FloatingText @bind-Value="employee.Address" Label="Customer Address" class="form-control" Placeholder="Enter address" />
+			<ValidationMessage For="()=>employee.Address" />
+				<button class="btn btn-primary mt-5 mb-5" type="submit">Save</button>
+		</EditForm>
+	</div>
+</div>
+<Toast Duration="@duration" Persist=true @ref="toastService.ToastComponent"/>
+@code{
+	int duration=3000;
+	Employee employee = new();
+	async Task Save(){
+		var (flag, message) = await emp.InsertAsync(employee);
+		if (flag)
+		{
+			toastService.ShowSuccessToast("Success",message);
+		}
+		else
+		{
+			duration = 5000;
+			toastService.ShowErrorToast("Error", message);
+			return;
+		}
+	}
+}

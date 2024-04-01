@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "8SLdl1RV1zWzwWVXyLs8bZquZP/+a4Vfk4S1VixAb0L061wfeM/0SpSXy6IOlMHImupnIoVky2+p1XihpbIp1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\minht\\Desktop\\CleanCode\\DemoCleanArchitecture\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\minht\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\minht\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\minht\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\minht\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\minht\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
